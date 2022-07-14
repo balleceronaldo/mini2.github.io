@@ -16,7 +16,7 @@ $con = connection();
 
 $id = $_GET['ID'];
 
-$sql = "SELECT * FROM student_list WHERE id = '$id'";
+$sql = "SELECT * FROM farmer_list WHERE id = '$id'";
 $students = $con->query($sql) or die($con->error);
 $row = $students->fetch_assoc();
 
@@ -80,7 +80,6 @@ $row = $students->fetch_assoc();
       <p>Lorem ipsum dolor sit amet <span class="classic">adipisicing elit</span>. Aspernatur commodi mollitia ratione perferendis maiores laborum officiis, corporis itaque alias laudantium ipsam veniam temporibus neque atque dolorum dolor consequatur eum aliquam.</p>
 
       <br>
-      <iframe width=600 height=371 src="https://lichess.org/study/embed/mpRiqnBB/RfoKNU4I#0" frameborder=0></iframe>
    </div>
    <br>
 

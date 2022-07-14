@@ -14,7 +14,7 @@ include_once("connections/connection.php");
 
 $con = connection();
 
-$sql = "SELECT * FROM student_list ORDER BY id DESC";
+$sql = "SELECT * FROM farmer_list ORDER BY id DESC";
 $students = $con->query($sql) or die($con->error);
 $row = $students->fetch_assoc();
 
@@ -86,9 +86,8 @@ $row = $students->fetch_assoc();
  <div class="bot"><a href="#top">back to top</a></div>
 
  <br>
- <footer class="footer"><small>&copy; <a href="./index.php">Coach Dinosaur</a></small></footer>
+ <footer class="footer"><small>&copy; <a href="./landing.html">Grow Soils</a></small></footer>
 
-</body>
-</body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
 </html>

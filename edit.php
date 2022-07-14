@@ -4,7 +4,7 @@ include_once("connections/connection.php");
 $con = connection();
 $id = $_GET['ID'];
 
-$sql = "SELECT * FROM student_list WHERE id = '$id'";
+$sql = "SELECT * FROM farmer_list WHERE id = '$id'";
 $students = $con->query($sql) or die($con->error);
 $row = $students->fetch_assoc();
 
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
  $fname = $_POST['firstname'];
  $lname = $_POST['lastname'];
  $gender = $_POST['gender'];
- $sql = "UPDATE student_list SET first_name = '$fname', last_name = '$lname', gender = '$gender' WHERE id = '$id'";
+ $sql = "UPDATE farmer_list SET first_name = '$fname', last_name = '$lname', gender = '$gender' WHERE id = '$id'";
  -$con->query($sql) or die($con->error);
 
  echo header("Location: details.php?ID=" . $id);

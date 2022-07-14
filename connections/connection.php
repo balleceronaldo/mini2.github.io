@@ -5,8 +5,8 @@ function connection()
 
  $host = "localhost";
  $username = "root";
- $password = "1234";
- $database = "student_system";
+ $password = "";
+ $database = "farm_system";
 
  $con = new mysqli($host, $username, $password, $database);
 

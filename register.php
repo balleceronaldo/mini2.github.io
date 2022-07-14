@@ -22,7 +22,7 @@ if(empty($_POST['username'] || empty($_POST['password']) || empty($_POST['email'
 }
 
 // check if details already exist or if new enter into database
-if($stmt = $con->prepare('SELECT id, password FROM student_users WHERE username = ?')){
+if($stmt = $con->prepare('SELECT id, password FROM system_users WHERE username = ?')){
  $stmt->bind_param('s',$_POST['username']);
  $stmt->execute();
  $stmt->store_result();
@@ -32,7 +32,7 @@ if($stmt = $con->prepare('SELECT id, password FROM student_users WHERE username 
  }
 //  send data to database
  else{
-  if($stmt = $con->prepare('INSERT INTO student_users (username, password, email) VALUES (?, ?, ?)')){
+  if($stmt = $con->prepare('INSERT INTO system_users (username, password, email) VALUES (?, ?, ?)')){
   $password = $_POST['password'];
    $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
    $stmt->execute();

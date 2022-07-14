@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
  $password = $_POST['password'];
  
 
- $sql = "SELECT * FROM student_users WHERE username = '$username' AND password = '$password'";
+ $sql = "SELECT * FROM system_users WHERE username = '$username' AND password = '$password'";
  $user = $con->query($sql) or die($con->error);
  $row = $user->fetch_assoc();
  $total = $user->num_rows;
