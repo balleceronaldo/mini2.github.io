@@ -2,13 +2,13 @@
 <?php
 
 if (!isset($_SESSION)) {
- session_start();
+    session_start();
 }
 
 if (isset($_SESSION['UserLogin'])) {
- echo "Welcome " . $_SESSION['UserLogin'];
+    echo "Welcome " . $_SESSION['UserLogin'];
 } else {
- echo "Welcome Guest";
+    echo "Welcome Guest";
 }
 
 include_once("connections/connection.php");
