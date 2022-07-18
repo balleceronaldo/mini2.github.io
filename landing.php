@@ -1,4 +1,3 @@
-//connection
 <?php
 
 if (!isset($_SESSION)) {
@@ -6,9 +5,11 @@ if (!isset($_SESSION)) {
 }
 
 if (isset($_SESSION['UserLogin'])) {
-  echo "Welcome " . $_SESSION['UserLogin'];
+  //I removed this console.log - by Michael
+  //echo "Welcome " . $_SESSION['UserLogin'];
 } else {
-  echo "Welcome Guest";
+  //I removed this console.log - by Michael
+  //echo "Welcome Guest";
 }
 
 include_once("connections/connection.php");
@@ -36,7 +37,7 @@ $row = $students->fetch_assoc();
 
 <body>
 
-<nav class="text-center navbar navbar-expand-lg navbar-dark bg-primary fixed-top pt-1">
+<nav class="text-center navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         
@@ -87,6 +88,7 @@ $row = $students->fetch_assoc();
 <div class="masthead" style="background-image: url('./img/background.webp');">
 <div class="color-overlay d-flex justify-content-center align-items-center">
 <!--showcase flexbox method text-sm-start aligns text to left-->
+
 <section class="text-light p-sm-5 pb-lg-5 pt-lg-5 text-center text-sm-start">
   <br>
     <div class="container">
