@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 if (isset($_SESSION['Access']) && $_SESSION['Access'] == "administrator" || isset($_SESSION['Access']) && $_SESSION['Access'] == "user") {
    echo "Welcome " . $_SESSION['UserLogin'] . "<br><br>";
 } else {
-   echo header("Location: landing.html");
+   echo header("Location: landing.php");
 }
 
 include_once("connections/connection.php");
@@ -28,20 +28,30 @@ $row = $students->fetch_assoc();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Coach Dinosaur System</title>
+   <title>Grow Soils System</title>
    <link rel="stylesheet" href="./css/analysis.css">
    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 </head>
 
 <body>
 
+<div class="container">
+   <div class="row">
+      <div id="map" class="smallmap col"></div>
+         <div class="col">
+   <br>
    <p>Farm Evaluation Details</p>
    <br>
    <h2><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?></h2>
    <p>Over-all Soil Quality: <?php echo $row['quality']; ?></p>
    <br>
    <p id="general"><?php echo $row['comment']; ?></p>
-   <br>
+   <p id="general"><?php echo $row['comment']; ?></p>
+   <input id="lat" type="hidden" value="<?= $row['latitude']; ?>" >
+   <input id="lng" type="hidden" value="<?= $row['longitude']; ?>">
+
 
    <table class="content-table">
       <thead>
@@ -66,14 +76,12 @@ $row = $students->fetch_assoc();
             <td><?php echo $row['s_rate']; ?></td>
          </tr>
          </tr>
-         <tr>
-            <td>3</td>
-            <td>Endgame</td>
-            <td>1500</td>
-            <td>Beginner</td>
-         </tr>
       </tbody>
    </table>
+   </div>
+</div>
+
+
 
    <div>
 
@@ -84,18 +92,13 @@ $row = $students->fetch_assoc();
    <br>
 
 
-   </section>
-   <section>
-      <h2>Section</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex sed similique inventore, asperiores odio dignissimos illum ducimus a nesciunt eligendi impedit mollitia pariatur dolorum et, tenetur, explicabo reprehenderit placeat tempore!</p>
-   </section>
-
    <section>
       <section>
          <h5>Heading 5</h5>
          <h3>Heading 3</h3>
          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae laboriosam voluptas cupiditate qui quis facilis similique, quaerat nam, voluptatibus nisi natus beatae deleniti. Adipisci eum sequi ab eligendi velit quod.</p>
       </section>
+      <br>
    </section>
    <br>
    <form class="index-form" action="delete.php" method="post">
@@ -110,10 +113,48 @@ $row = $students->fetch_assoc();
             <?php } ?>
 
             <input type="hidden" name="ID" value="<?php echo $row['id']; ?>">
+            
    </form>
    <br>
-   <footer class="footer"><small>&copy; <a href="./landing.html">Grow Soils</a></small></footer>
+   <footer class="footer"><small>&copy; <a href="./landing.php">Grow Soils</a></small></footer>
+   </div>
+            
+   
+   <script src="./lib/OpenLayers.js"></script>
+   <!-- <script src="./js/bing-tiles.js"></script> -->
+   <script>
+      lat = parseFloat('<?php echo $row['latitude']; ?>');
+      lng = parseFloat('<?php echo $row['longitude']; ?>');
+      var apiKey = "Ag7DSkKr-xwKNkS_dRyQ51O-e5Wz7ca-Fz2mzu6vtWPm1YxbIE6eFcYgXgMMUM4X";
 
+var map = new OpenLayers.Map( 'map');
+
+var road = new OpenLayers.Layer.Bing({
+    key: apiKey,
+    type: "Road",
+
+    metadataParams: {mapVersion: "v1"}
+});
+var aerial = new OpenLayers.Layer.Bing({
+    key: apiKey,
+    type: "Aerial"
+});
+var hybrid = new OpenLayers.Layer.Bing({
+    key: apiKey,
+    type: "AerialWithLabels",
+    name: "Bing Aerial With Labels"
+});
+
+map.addLayers([aerial, hybrid, road]);
+map.addControl(new OpenLayers.Control.LayerSwitcher());
+// Zoom level numbering depends on metadata from Bing, which is not yet loaded.
+var zoom = map.getZoomForResolution(0);
+map.setCenter(new OpenLayers.LonLat(lng,lat).transform(
+    new OpenLayers.Projection("EPSG:4326"),
+    map.getProjectionObject()
+), zoom);
+
+   </script>
 </body>
 
 </html>

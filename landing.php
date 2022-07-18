@@ -1,3 +1,25 @@
+<?php
+
+if (!isset($_SESSION)) {
+ session_start();
+}
+
+if (isset($_SESSION['UserLogin'])) {
+ echo "Welcome " . $_SESSION['UserLogin'];
+} else {
+ echo "Welcome Guest";
+}
+
+include_once("connections/connection.php");
+
+$con = connection();
+
+$sql = "SELECT * FROM farmer_list ORDER BY id DESC";
+$students = $con->query($sql) or die($con->error);
+$row = $students->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,12 +64,24 @@
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="./register.html">Register</a>
+            <?php if (isset($_SESSION['UserLogin'])) { ?>
+              <a class="nav-link" href="index.php">Farmer List</a>
+            <?php  } else { ?>
+            <a class="nav-link" href="register.html">Register</a>
+            <?php } ?>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./login.php">Login</a>
+            <?php if (isset($_SESSION['UserLogin'])) { ?>
+            <a class="nav-link" href="logout.php">Logout</a>
+            <?php  } else { ?>
+            <a class="nav-link" href="login.php">Login</a>
+            <?php } ?>
             </li>
           </ul>
+
+
+
+
       </div>
     </div>
   </nav>
