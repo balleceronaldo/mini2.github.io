@@ -4,11 +4,27 @@
   padding: 0;
   margin: 0;
 }
-/* Added by -Michael */
+
 #navigation-bar{
   padding: 0;
   margin: 0;
   background: #592f20;
+}
+footer{
+  padding: 0.8rem;
+  margin: 0;
+  background: #592f20;
+  color: #ddd;
+}
+footer a{
+  text-decoration: none;
+  color: #ddd
+}
+.footer-info{
+  width: 33.3333%;
+}
+.footer-info ul li{
+  list-style-type: none;
 }
 
 .masthead {
@@ -21,14 +37,11 @@
 
 html {
   background: rgba(183, 228, 199, 0.5);
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Arial";
-}
-
-h1 {
-  text-align: center;
 }
 
 table {
@@ -36,12 +49,24 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
-.hero-text {
-  background-color: rgba(0, 0, 0, .65);
-  color: rgb(160, 255, 147);
-  animation: slideInFromLeft 1.2s ease-in;
-
+.hero-img{
+  max-width: 40rem;
+}
+.lead{
+  color: #ddd;
+}
+.para{
+  background-color: rgba(89, 47, 32, 0.279);
+}
+#para{
+  margin-left: 7em;
+  margin-right: 7em;
+  font-size: 2em;
+  font-weight: 400;
+  color: #f4e015;
+}
+span, important{
+  color: #5cf63d;
 }
 
 .table {
@@ -101,9 +126,17 @@ img.avatar {
   text-align: center;
   margin: 24px 0 12px 0;
 }
+
+button{
+  background-color: #592f20;
+  padding: 0.5em; 
+  border-radius: 60%;
+}
+
 button:hover {
   opacity: 0.8;
 }
+
 input[type="text"],
 input[type="password"] {
   width: 100%;
@@ -112,19 +145,6 @@ input[type="password"] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-button {
-  background-color: #089e03;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-.footer {
-  text-align: center;
 }
 .index-form {
   width: 300px;
