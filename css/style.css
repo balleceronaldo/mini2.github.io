@@ -4,6 +4,12 @@
   padding: 0;
   margin: 0;
 }
+/* Added by -Michael */
+#navigation-bar{
+  padding: 0;
+  margin: 0;
+  background: #592f20;
+}
 
 .masthead {
   background-size: cover;
@@ -37,11 +43,6 @@ table {
   animation: slideInFromLeft 1.2s ease-in;
 
 }
-
-.hero-btn {
-  animation: slideInFromLeft 1.2s ease-in;
-}
-
 
 .table {
   margin-right: auto;
@@ -169,9 +170,6 @@ button {
   }
 }
 
-.navbar-brand, .hero-img {
-  animation: slideInFromRight 1.5s ease-in;
-}
 
 /* media query */
 
