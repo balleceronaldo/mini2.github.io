@@ -34,7 +34,7 @@ $row = $students->fetch_assoc();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <!-- fontawesome cdn -->
-  <script src="https://use.fontawesome.com/370fcb8630.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -42,8 +42,8 @@ $row = $students->fetch_assoc();
     
     <div class="masthead" style="background-image: url('./img/noah-buscher-x8ZStukS2PM-unsplash.jpg'); height: 100vh">
     
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg py-1 px-5" id="navigation-bar">
+        <!--Navbar-->
+      <nav class="navbar navbar-expand-lg py-1 px-5 shadow-lg" id="navigation-bar">
 
         <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarSupportedContent">
 
@@ -97,34 +97,39 @@ $row = $students->fetch_assoc();
 
         </div>
 
-    </nav>
+      </nav>
 
-    <section class="d-flex justify-content-center align-items-center text-center">
+      <section class="SectionContent text-center d-flex align-items-center">
 
-      <div class="row">
+          <div class="row">
 
-          <div class="col-12">
-              <img class="hero-img w-50 p-4" src="./img/grow_soils.webp" alt="Grow Soils">
+              <div class="col-12">
+                  <img class="hero-img p-4" src="./img/grow_soils1.webp" alt="Grow Soils">
+              </div>
+
+              <div class="col-12 para py-3">
+
+                  <h3 class="head my-2" id="para">Sinusuportahan natin ang ating mahal na mga Magsasaka upang matulungan sila sa kalidad ng kanilang mga ani.
+                  </h3>
+                    
+                  <!-- <h3 class="lead my-2" id="para">Sinusuportahan natin ang ating mahal na mga <span class="important"><b>Magsasaka</b></span> upang matulungan sila sa kalidad ng kanilang mga ani.
+                  </h3> -->
+
+                  <!-- <h3 class="lead" id="para">In support and in cooperation with the <span class="important"><b>Department of Agriculture</b></span>, Grow Soils Ph plans to provide up to date soil data and analysis for all farmers.
+                  </h3> -->
+
+              </div>
+
+              <div class="col-12 the-button mt-4">
+                  <a href="./register.html"><button class="rounded-3 text-light">Iparehistro Ang Iyong Lupa</button></a>
+              </div>
+
           </div>
 
-          <div class="col-12 para py-3">
-
-              <h3 class="lead my-2" id="para">Sinusuportahan natin ang ating mahal na mga <span class="important"><b>Magsasaka</b></span> upang matulungan sila sa kalidad ng kanilang mga ani.
-              </h3>
-
-              <h3 class="lead" id="para">In support and in cooperation with the <span class="important"><b>Department of Agriculture</b></span>, Grow Soils Ph plans to provide up to date soil data and analysis for all farmers.
-              </h3>
-
-          </div>
-
-          <div class="col-12 mt-3">
-          <a href="./register.html"><button class="rounded-3 text-light">Iparehistro Ang Iyong Lupa</button></a>
-          </div>
-
-      </div>
-
-    </section>
-
+      </section>
+    
+    </div>
+    
 </div>
 
 <!-- i removed this temporarily but i had to ask this to sir ronaldo for confirmation -->
@@ -133,27 +138,33 @@ $row = $students->fetch_assoc();
   <div class="container">
     <div class="row">
     
-      <div class="col-12 text-center border-bottom border-1 d-flex justify-content-around">
-        <h1>Logo</h1>
-        <a href="#"><h2">Lorem</h2></a>
-        <a href="#"><h2">Lorem</h2></a>
-        <a href="#"><h2">Lorem</h2></a>
-        <a href="#"><h2">Lorem</h2></a>
-        <a href="#"><h2">Lorem</h2></a>
+      <div class="col-12 text-center border-bottom border-1 d-flex justify-content-around align-items-center pb-3">
 
-        <a href="#"><i class="fa-brands fa-facebook-square">fb</i></a>
-        <a href="#"><i class="fa-brands fa-facebook-square">fb</i></a>
-        <a href="#"><i class="fa-brands fa-facebook-square">fb</i></a>
+        <h1><a href="#"><img src="./img/Logo.ico" alt="Logo"></a></h1>
+        <a class="footer-text-link" href="#"><h2">About Us</h2></a>
+        <a class="footer-text-link" href="#"><h2">Contact Us</h2></a>
+        <a class="footer-text-link" href="#"><h2">Partners</h2></a>
+        <a class="footer-text-link" href="#"><h2">Locations</h2></a>
+        
+        <div class="d-flex">
+            <a class="footer-icon-link px-3" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="footer-icon-link px-3" href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="footer-icon-link px-3" href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="footer-icon-link px-3" href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a class="footer-icon-link px-3" href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
 
       </div>
 
       <div class="col-12 footer-info text-center pt-3">
-        <a href="./index.php">Grow Soils Ph</a>
+        <a class="footer-text-link" href="./index.php">Grow Soils Ph</a>
+        <p class="footer-text-link">© 2022 Accenture. All Rights Reserved.</p>
       </div>
 
     </div>
   </div>
 </footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </html>

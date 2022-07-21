@@ -3,3 +3,6 @@
 #ACB992
 #E9E5D6
 https://colorcodefinder.com/
+
+inter
+poppins

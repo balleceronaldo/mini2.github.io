@@ -5,43 +5,59 @@
   margin: 0;
 }
 
+body {
+  font-family: "Arial";
+  background: rgba(183, 228, 199, 0.5);
+  overflow-x: hidden;
+}
+
 #navigation-bar{
   padding: 0;
   margin: 0;
   background: #592f20;
 }
-footer{
-  padding: 0.8rem;
-  margin: 0;
-  background: #592f20;
+
+.masthead {
+  background-size: cover;
+  position: relative;
+}
+.head{
   color: #ddd;
 }
-footer a{
+.para{
+  background-color: rgba(89, 47, 32, 0.279);
+}
+#para{
+  margin-left: 10em;
+  margin-right: 10em;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #f4e015;
+}
+.SectionContent{
+  min-height: 100vh;
+}
+
+footer{
+  padding: 0;
+  margin: 0;
+  background: #592f20;
+}
+.footer-text-link{
+  color: #ddd;
+}
+.footer-icon-link{
   text-decoration: none;
-  color: #ddd
 }
 .footer-info{
   width: 33.3333%;
 }
-.footer-info ul li{
-  list-style-type: none;
+.fa-brands{
+  color: #ddd;
 }
 
-.masthead {
-  background-size: cover;
-  height: 500px;
-  position: relative;
-  color: white;
-  text-shadow: 2px 2px 2px rgba(0,0,0,.2);
-}
-
-html {
-  background: rgba(183, 228, 199, 0.5);
-  overflow-x: hidden;
-}
-
-body {
-  font-family: "Arial";
+.hero-img{
+  max-width: 50rem;
 }
 
 table {
@@ -49,22 +65,8 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-.hero-img{
-  max-width: 40rem;
-}
-.lead{
-  color: #ddd;
-}
-.para{
-  background-color: rgba(89, 47, 32, 0.279);
-}
-#para{
-  margin-left: 7em;
-  margin-right: 7em;
-  font-size: 2em;
-  font-weight: 400;
-  color: #f4e015;
-}
+
+
 span, important{
   color: #5cf63d;
 }
@@ -91,14 +93,6 @@ th {
 
 tr:nth-child(even) {
   background-color: rgba(8, 28, 21, 0.2);
-}
-a {
-  text-decoration: none;
-}
-
-ul li a{
-  color: #ccc;
-  text-decoration: none;
 }
 
 .bot {
@@ -128,8 +122,9 @@ img.avatar {
 }
 
 button{
-  background-color: #592f20;
+  background-color: #0f5301;
   padding: 0.5em; 
+  border: 0;
   border-radius: 60%;
 }
 
@@ -187,14 +182,5 @@ input[type="password"] {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-
-/* media query */
-
-@media(max-width:500px) {
-  section {
-    display: none;
   }
 }
