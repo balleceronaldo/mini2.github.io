@@ -10,22 +10,40 @@ body {
   background: rgba(183, 228, 199, 0.5);
   overflow-x: hidden;
 }
+button{
+  background-color: #0f5301;
+  padding: 0.5em; 
+  border: 0;
+  border-radius: 60%;
+}
 
 #navigation-bar{
   padding: 0;
   margin: 0;
   background: #592f20;
 }
+#nav-tag{
+  border: 0.1em solid #88cc7a;
+}
+#nav-icon{
+  color: #88cc7a;
+}
 
 .masthead {
   background-size: cover;
-  position: relative;
+  position: absolute;
 }
 .head{
   color: #ddd;
 }
+
+.section-content{
+  margin-top: -7%;
+  min-height: 100%;
+}
 .para{
   background-color: rgba(89, 47, 32, 0.279);
+  overflow-x: hidden;
 }
 #para{
   margin-left: 10em;
@@ -34,14 +52,48 @@ body {
   font-weight: 400;
   color: #f4e015;
 }
-.SectionContent{
-  min-height: 100vh;
+/* to medium */
+@media screen and (max-width: 768px) {
+  #para{
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+.main-img{
+  width: 75%;
+  padding-left: auto;
+  padding-right: auto;
+}
+/* to xs */
+@media screen and (max-width: 768px) {
+  #para{
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1em;
+  }
+}
+
+.main-img{
+  width: 50%;
+  padding-left: auto;
+  padding-right: auto;
 }
 
 footer{
   padding: 0;
   margin: 0;
   background: #592f20;
+}
+@media screen and (max-width: 576px) {
+  .footer-top{
+    flex-direction: column;
+  }
+  .footer-bottom{
+    flex-direction: column;
+  }
+  #footer-text-link-top{
+    margin-bottom: 1em;
+  }
 }
 .footer-text-link{
   color: #ddd;
@@ -54,10 +106,6 @@ footer{
 }
 .fa-brands{
   color: #ddd;
-}
-
-.hero-img{
-  max-width: 50rem;
 }
 
 table {
@@ -121,13 +169,6 @@ img.avatar {
   margin: 24px 0 12px 0;
 }
 
-button{
-  background-color: #0f5301;
-  padding: 0.5em; 
-  border: 0;
-  border-radius: 60%;
-}
-
 button:hover {
   opacity: 0.8;
 }
@@ -146,41 +187,4 @@ input[type="password"] {
 }
 .details-page {
   text-align: center;
-}
-
-/* animations */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
