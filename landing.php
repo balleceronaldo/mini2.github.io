@@ -127,14 +127,22 @@ if ($total > 0) {
                     <a class="nav-link  text-light" href="./contact.html">Contact</a>
                 </li>
                 
-                <li class="nav-item px-1">
+                <!-- <li class="nav-item px-1">
                     <?php if (isset($_SESSION['UserLogin'])) { ?>
                     <a class="nav-link  text-light" href="index.php">Farmer List</a>
                     <?php  } else { ?>
                     <a class="nav-link  text-light" href="register.html">Register</a>
                     <?php } ?>
-                </li>
+                </li> -->
                 
+                <!-- modal register -->
+                <li class="nav-item px-1">
+                    <!-- Button trigger modal -->
+                    <a class="nav-link  text-light btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal">
+                         Register
+                    </a>
+                </li>
+
                 <!-- <li class="nav-item px-1">
                     <?php if (isset($_SESSION['UserLogin'])) { ?>
                     <a class="nav-link  text-light" href="logout.php">Logout</a>
@@ -146,7 +154,7 @@ if ($total > 0) {
                 <!-- modal login -->
                 <li class="nav-item px-1">
                     <!-- Button trigger modal -->
-                    <a class="nav-link  text-light btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a class="nav-link  text-light btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">
                         Login
                     </a>
                 </li>
@@ -197,13 +205,13 @@ if ($total > 0) {
 
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Login</h3>
+        <h3 class="modal-title" id="loginModalLabel">Login</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -218,10 +226,10 @@ if ($total > 0) {
             <div class="text-center">
 
                 <label>Username</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" placeholder="Username" id="username">
 
                 <label>Password</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" placeholder="Password" id="password">
 
                 <a href="#"><button type="submit" name="login" class=" rounded px-2 log-in-button">Login</button></a>
                 
@@ -239,6 +247,52 @@ if ($total > 0) {
     </div>
   </div>
 </div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h3 class="modal-title" id="registerModalLabel">Register</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="text-center">
+          
+          <form action="register.php" method="POST">
+
+              <div class="text-center">
+                <img src="./img/grow_soils_logo.webp" alt="Avatar" class="avatar">
+              </div>
+
+              <label for="username">Username</label>
+              <input type="text" name="username" placeholder="Username" id="username" required/>
+              
+              <label for="password">Password</label>
+              <input type="password" name="password" placeholder="Password" id="password" required/>
+              
+              <label for="email"></label>
+              <input type="email" name="email" placeholder="Email" id="email" required/>
+
+              <input type="submit" value="Register" />
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+
+    </div>
+  </div>
+</div>
+
 
 <!-- <footer><small>&copy; <a href="./index.php">Grow Soils Ph</a></small></footer> -->
 <footer>
