@@ -118,6 +118,14 @@ footer{
   border-radius: 20%;
   border: 3px solid #0f5301;
 }
+#password, #username, #email{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0.5em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
 table {
   border: 1px solid black;

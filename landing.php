@@ -274,10 +274,11 @@ if ($total > 0) {
               <label for="password">Password</label>
               <input type="password" name="password" placeholder="Password" id="password" required/>
               
-              <label for="email"></label>
+              <label for="email">Email</label>
               <input type="email" name="email" placeholder="Email" id="email" required/>
 
-              <input type="submit" value="Register" />
+              <a href="#"><button type="submit" name="register" class=" rounded px-2 log-in-button">Register</button></a>
+              <!-- <input type="submit" value="Register" /> -->
           </form>
 
         </div>
