@@ -81,15 +81,19 @@ $row = $students->fetch_assoc();
                 <li class="nav-item px-1 w-auto">
                     <a class="nav-link active text-light w-auto" aria-current="page" href="./index.html">Home</a>
                 </li>
+                
                 <li class="nav-item px-1">
                     <a class="nav-link  text-light" href="./about.html">About</a>
                 </li>
+                
                 <li class="nav-item px-1">
                     <a class="nav-link  text-light" href="./products.html">Services</a>
                 </li>
+                
                 <li class="nav-item px-1">
                     <a class="nav-link  text-light" href="./contact.html">Contact</a>
                 </li>
+                
                 <li class="nav-item px-1">
                     <?php if (isset($_SESSION['UserLogin'])) { ?>
                     <a class="nav-link  text-light" href="index.php">Farmer List</a>
@@ -97,6 +101,7 @@ $row = $students->fetch_assoc();
                     <a class="nav-link  text-light" href="register.html">Register</a>
                     <?php } ?>
                 </li>
+
                 <li class="nav-item px-1">
                     <?php if (isset($_SESSION['UserLogin'])) { ?>
                     <a class="nav-link  text-light" href="logout.php">Logout</a>
@@ -104,6 +109,14 @@ $row = $students->fetch_assoc();
                     <a class="nav-link  text-light" href="login.php">Login</a>
                     <?php } ?>
                 </li>
+
+                <li class="nav-item px-1">
+                    <!-- Button trigger modal -->
+                    <a class="nav-link  text-light btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch
+                    </a>
+                </li>
+
             </ul>
 
             <form class="d-none d-lg-flex justify-content-center">
@@ -148,6 +161,49 @@ $row = $students->fetch_assoc();
 
     </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Login</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form action="#" method="post">
+
+            <div class="text-center">
+                <img src="./img/grow_soils_logo.webp" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="text-center">
+
+                <label>Username</label>
+                <input type="text" name="username" id="username">
+
+                <label>Password</label>
+                <input type="password" name="password" id="password">
+
+                <a href="#"><button type="submit" name="login" class=" rounded px-3 log-in-button">Login</button></a>
+                
+            </div>
+
+        </form>
+
+      </div>
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+
+    </div>
+  </div>
 </div>
 
 <!-- <footer><small>&copy; <a href="./index.php">Grow Soils Ph</a></small></footer> -->
