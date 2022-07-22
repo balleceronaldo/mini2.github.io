@@ -1,3 +1,4 @@
+<!--PHP Landing Code -->
 <?php
 
 if (!isset($_SESSION)) {
@@ -19,6 +20,38 @@ $con = connection();
 $sql = "SELECT * FROM farmer_list ORDER BY id DESC";
 $students = $con->query($sql) or die($con->error);
 $row = $students->fetch_assoc();
+
+?>
+
+<!-- PHP Login Code -->
+<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+include_once("connections/connection.php");
+$con = connection();
+
+if (isset($_POST['login'])) {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+ 
+    $sql = "SELECT * FROM system_users WHERE username = '$username' AND password = '$password'";
+    $user = $con->query($sql) or die($con->error);
+    $row = $user->fetch_assoc();
+    $total = $user->num_rows;
+
+if ($total > 0) {
+    $_SESSION['UserLogin'] = $row['username'];
+    $_SESSION['Access'] = $row['access'];
+
+    echo header("Location: index.php");
+} else {
+    echo "No user found or wrong password.";
+}
+}
 
 ?>
 
@@ -101,19 +134,20 @@ $row = $students->fetch_assoc();
                     <a class="nav-link  text-light" href="register.html">Register</a>
                     <?php } ?>
                 </li>
-
-                <li class="nav-item px-1">
+                
+                <!-- <li class="nav-item px-1">
                     <?php if (isset($_SESSION['UserLogin'])) { ?>
                     <a class="nav-link  text-light" href="logout.php">Logout</a>
                     <?php  } else { ?>
                     <a class="nav-link  text-light" href="login.php">Login</a>
                     <?php } ?>
-                </li>
+                </li> -->
 
+                <!-- modal login -->
                 <li class="nav-item px-1">
                     <!-- Button trigger modal -->
                     <a class="nav-link  text-light btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Launch
+                        Login
                     </a>
                 </li>
 
@@ -189,7 +223,7 @@ $row = $students->fetch_assoc();
                 <label>Password</label>
                 <input type="password" name="password" id="password">
 
-                <a href="#"><button type="submit" name="login" class=" rounded px-3 log-in-button">Login</button></a>
+                <a href="#"><button type="submit" name="login" class=" rounded px-2 log-in-button">Login</button></a>
                 
             </div>
 
